@@ -37,10 +37,9 @@ window.onload = function() {
         addTaskBtn.style.display = 'none';
     }
 
-    // Lógica de tareas (agregar/eliminar)
     addTaskBtn.addEventListener('click', function() {
         const taskList = document.getElementById('task-list');
-        const newTaskText = newTaskInput.value;
+        const newTaskText = newTaskInput.value.trim();
 
         if (newTaskText !== '') {
             const li = document.createElement('li');
