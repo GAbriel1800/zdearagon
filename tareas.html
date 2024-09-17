@@ -3,40 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZDeAragon - Tareas</title>
+    <title>ZDeAragon - Panel de Usuario</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Bienvenido a tus Tareas</h1>
-        <ul id="task-list">
-            <li>Ejemplo de tarea 1 <button onclick="deleteTask(this)">Eliminar</button></li>
-            <li>Ejemplo de tarea 2 <button onclick="deleteTask(this)">Eliminar</button></li>
-        </ul>
-        <input type="text" id="new-task" placeholder="Añadir nueva tarea">
-        <button onclick="addTask()">Añadir Tarea</button>
+    <div class="main-container">
+        <h1 id="welcome-message"></h1>
+        <div class="sections">
+            <div class="section" id="tareas-section">
+                <h2>Tareas</h2>
+                <ul id="task-list">
+                    <!-- Las tareas se agregarán dinámicamente -->
+                </ul>
+                <input type="text" id="new-task" placeholder="Añadir nueva tarea">
+                <button id="add-task-btn">Añadir Tarea</button>
+            </div>
+
+            <div class="section" id="chat-section">
+                <h2>Chat</h2>
+                <ul id="chat-box">
+                    <!-- Mensajes de chat -->
+                </ul>
+                <input type="text" id="chat-message" placeholder="Escribe un mensaje">
+                <button id="send-message-btn">Enviar</button>
+            </div>
+
+            <div class="section" id="logout-section">
+                <h2>Logout</h2>
+                <button onclick="logout()">Cerrar Sesión</button>
+            </div>
+        </div>
     </div>
-    <script>
-        // Función para añadir tareas
-        function addTask() {
-            const taskList = document.getElementById('task-list');
-            const newTaskInput = document.getElementById('new-task');
-            const newTaskText = newTaskInput.value;
-
-            if (newTaskText !== '') {
-                const li = document.createElement('li');
-                li.innerHTML = `${newTaskText} <button onclick="deleteTask(this)">Eliminar</button>`;
-                taskList.appendChild(li);
-                newTaskInput.value = '';
-            }
-        }
-
-        // Función para eliminar tareas
-        function deleteTask(button) {
-            const li = button.parentNode;
-            li.remove();
-        }
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
-
