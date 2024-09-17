@@ -1,7 +1,7 @@
 const users = [
     { username: 'GabrielRey', password: 'miPassword123', name: 'Gabriel', role: 'admin' },
-    { username: 'Pablo', password: 'pabloPassword', name: 'Pablo', role: 'worker' },
-    { username: 'Martin', password: 'martinPassword', name: 'Martin', role: 'worker' }
+    { username: 'Pablo', password: 'pablo123', name: 'Pablo', role: 'worker' },
+    { username: 'Martin', password: 'martin123', name: 'Martin', role: 'worker' }
 ];
 
 document.getElementById('login-form').addEventListener('submit', function(event) {
